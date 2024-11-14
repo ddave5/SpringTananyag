@@ -3,15 +3,12 @@ package hu.masterfield.bankproject.services;
 import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 import hu.masterfield.bankproject.datatypes.Account;
 import hu.masterfield.bankproject.datatypes.Confirmation;
 import hu.masterfield.bankproject.interfaces.AccountRepository;
 import hu.masterfield.bankproject.interfaces.TransferService;
 
-@Service("transferService")
 public class TransferServiceImpl implements TransferService {
 
     private AccountRepository accountRepository = null;
@@ -20,7 +17,7 @@ public class TransferServiceImpl implements TransferService {
     }
 
     @Autowired
-    public TransferServiceImpl(@Qualifier("JdbcAccountRepository") AccountRepository accountRepository) {
+    public TransferServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 

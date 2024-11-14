@@ -7,14 +7,12 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import hu.masterfield.bankproject.datatypes.Account;
 import hu.masterfield.bankproject.interfaces.AccountRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-@Repository("JdbcAccountRepository")
 public class JdbcAccountRepository implements AccountRepository {
 
     @Autowired
