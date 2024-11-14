@@ -11,14 +11,14 @@ import hu.masterfield.bankproject.interfaces.TransferService;
 public class TransferTestSpring {
 
     
-    public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(ApplicationConfiguration.class);
+    // public static void main(String[] args) {
+    //     ApplicationContext context = SpringApplication.run(ApplicationConfiguration.class);
 
-        TransferService service = (TransferService) context.getBean("transferService");
+    //     TransferService service = (TransferService) context.getBean("transferService");
 
-        Confirmation conf = service.transfer("Pénzes Péter", "Szegény Szilárd", 500);
+    //     Confirmation conf = service.transfer("Pénzes Péter", "Szegény Szilárd", 500);
 
-        System.out.println(conf);
-    }
+    //     System.out.println(conf);
+    // }
 
 }

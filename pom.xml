@@ -10,6 +10,8 @@
 	</parent>
 	<groupId>hu.masterfield</groupId>
 	<artifactId>bankproject</artifactId>
+	<packaging>war</packaging>
+
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bankproject</name>
 	<description>Demo project for Spring Boot</description>
@@ -76,6 +78,16 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>hu/masterfield/bankproject/configuration/db.properties</include>
+					<include>hu/masterfield/bankproject/configuration/application-config.xml</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
+
 
 </project>
