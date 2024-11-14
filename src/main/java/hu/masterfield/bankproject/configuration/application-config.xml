@@ -11,7 +11,7 @@
 
 
         <bean id="transferService" class="hu.masterfield.bankproject.services.TransferServiceImpl">
-            <proprety name="accountRepository" ref="accountRepository"/>
+            <property name="accountRepository" ref="accountRepository"/>
         </bean>
 
         <bean id="accountRepository" class="hu.masterfield.bankproject.services.JdbcAccountRepository">
