@@ -9,7 +9,5 @@ import org.springframework.context.annotation.Import;
 @ComponentScan({"hu.masterfield.bankproject.services", "hu.masterfield.bankproject.repository"})
 @Import(InfraConfiguration.class)
 public class ApplicationConfiguration {
-
-
     
 }
