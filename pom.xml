@@ -16,7 +16,7 @@
 	<name>bankproject</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
-	<licenses>
+	<licenses> 
 		<license/>
 	</licenses>
 	<developers>
@@ -68,6 +68,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+			<version>3.0.1</version>
 		</dependency>
 	</dependencies>
 

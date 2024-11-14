@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 
 import hu.masterfield.bankproject.datatypes.Account;
 import hu.masterfield.bankproject.interfaces.AccountRepository;
@@ -36,6 +37,7 @@ public class JdbcAccountRepository implements AccountRepository {
     }
 
     @Override
+    @Cacheable(value="accountCache", key="#accountNo")
     public Account loadAccount(String accountNo) throws SQLException {
 
         boolean isNewAccount = false;

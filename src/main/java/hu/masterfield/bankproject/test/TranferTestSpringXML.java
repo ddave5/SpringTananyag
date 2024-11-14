@@ -17,7 +17,7 @@ public class TranferTestSpringXML {
 
         TransferService service = (TransferService) context.getBean("transferService");
 
-        Confirmation conf = service.transfer("Pénzes Péter", "Szegény Szilárd", 500);
+        Confirmation conf = service.transfer("Pénzes Péter", "Szegény Szilárd", 100);
 
         System.out.println(conf);
     }
