@@ -5,6 +5,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import hu.masterfield.bankproject.datatypes.Confirmation;
@@ -13,7 +14,7 @@ import hu.masterfield.bankproject.datatypes.Confirmation;
 @Component
 public class MetricsAspect {
     
-    @Around("execution(* transfer(..)")
+    @Around("execution(* transfer(..))")
     public Object profile(ProceedingJoinPoint point) throws Throwable {
         long startTime = System.currentTimeMillis();
 
@@ -25,9 +26,17 @@ public class MetricsAspect {
 
     }
 
-    @AfterReturning(value="execution(*transfer(..)", returning = "conf")
+    @AfterReturning(value="execution(* transfer(..))", returning = "conf")
     public void dump(JoinPoint point, Confirmation conf) {
         System.out.println("<< " + point + " >> dump= " + conf);
+    }
+
+    @Before("execution(* transfer(..))")
+    public void dumpInput(JoinPoint point) {
+        Object[] args = point.getArgs();
+        for (Object arg: args) {
+            System.out.println("<< dumparg >>" + arg);
+        }
     }
  
 }

@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @EnableCaching
 @EnableAspectJAutoProxy
-@ComponentScan("hu.masterfield.bankproject.aspect")
+@ComponentScan("hu.masterfield.bankproject.aspects")
 public class XMLApplicationConfiguration {
     
 }
