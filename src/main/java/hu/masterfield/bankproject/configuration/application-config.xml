@@ -9,6 +9,9 @@
         <context:property-placeholder 
         location="classpath:hu/masterfield/bankproject/configuration/db.properties" />
 
+        <context:property-placeholder 
+        location="classpath:hu/masterfield/bankproject/configuration/db.embedded.properties" />
+
 
         <bean id="transferService" class="hu.masterfield.bankproject.services.TransferServiceImpl">
             <property name="accountRepository" ref="accountRepository"/>

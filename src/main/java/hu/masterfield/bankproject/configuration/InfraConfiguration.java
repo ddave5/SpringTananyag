@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import jakarta.inject.Named;
 
 @Configuration
-@PropertySource("classpath:/hu/masterfield/bankproject/configuration/db.properties")
+@PropertySource("classpath:/hu/masterfield/bankproject/configuration/db.embedded.properties")
 @EnableTransactionManagement
 public class InfraConfiguration {
 
@@ -56,8 +56,9 @@ public class InfraConfiguration {
 
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         jpaVendorAdapter.setShowSql(true);
-        jpaVendorAdapter.setGenerateDdl(false);
-        jpaVendorAdapter.setDatabase(Database.MYSQL);
+        jpaVendorAdapter.setGenerateDdl(true);
+        //jpaVendorAdapter.setDatabase(Database.MYSQL); // FOR MARIADB
+        jpaVendorAdapter.setDatabase(Database.H2);      // FOR H2
 
         emFactory.setJpaVendorAdapter(jpaVendorAdapter);
 
