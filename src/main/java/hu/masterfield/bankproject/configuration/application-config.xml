@@ -14,8 +14,7 @@
             <property name="accountRepository" ref="accountRepository"/>
         </bean>
 
-        <bean id="accountRepository" class="hu.masterfield.bankproject.services.JdbcAccountRepository">
-            <constructor-arg ref="dataSource"/>
+        <bean id="accountRepository" class="hu.masterfield.bankproject.services.JpaAccountRepository">
         </bean>
 
 </beans>

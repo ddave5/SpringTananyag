@@ -1,8 +1,28 @@
 package hu.masterfield.bankproject.datatypes;
 
-public class Account {
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+@Entity
+@Table(name="ACCOUNTS")
+public class Account implements Serializable{
+
+    public static final int DEFAULT_BALANCE = 10000;
+
+    @Id
+    @Column(name = "ACCOUNT_NAME")
     private String accountName = null;
-    private int balance = 10000;
+
+    @Column(name = "ACCOUNT_BALANCE")
+    private int balance = DEFAULT_BALANCE;
+
+    @Transient
+    private String RSAsecret = null;
 
     public String getAccountName() {
         return accountName;
