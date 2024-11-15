@@ -8,7 +8,7 @@ import hu.masterfield.bankproject.configuration.XMLApplicationConfiguration;
 import hu.masterfield.bankproject.datatypes.Confirmation;
 import hu.masterfield.bankproject.interfaces.TransferService;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class TranferTestSpringXML {
 
     

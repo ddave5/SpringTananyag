@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>TransferView</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+  
+    <p>New balance: <span th:text="${receipt.newBalance}"></span></p>
+    <p>Success: <span th:text="${receipt.success}"></span></p>
+    <p>Message: <span th:text="${receipt.message}"></span></p>
+  
+  </body>
+
+</html>
